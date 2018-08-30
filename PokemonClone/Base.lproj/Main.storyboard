@@ -32,6 +32,17 @@
                                     <action selector="centreTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xo4-R8-Ymn"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QeU-aQ-7bG">
+                                <rect key="frame" x="162" y="597" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="9Ka-sB-2pT"/>
+                                    <constraint firstAttribute="width" constant="50" id="kEM-vC-IgD"/>
+                                </constraints>
+                                <state key="normal" image="pokeball"/>
+                                <connections>
+                                    <segue destination="vHd-2X-d2M" kind="presentation" id="YJE-y9-Gga"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -39,8 +50,10 @@
                             <constraint firstItem="6Dh-KT-ZUP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9cW-ad-rVD"/>
                             <constraint firstItem="XjN-K5-FI2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="CsF-wG-TJc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XjN-K5-FI2" secondAttribute="trailing" constant="10" id="DUj-Mv-pOe"/>
+                            <constraint firstItem="QeU-aQ-7bG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mpf-t7-hbH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6Dh-KT-ZUP" secondAttribute="trailing" id="Rwq-ef-zOS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6Dh-KT-ZUP" secondAttribute="bottom" id="VO7-MC-MOF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QeU-aQ-7bG" secondAttribute="bottom" constant="20" id="fOF-7c-I2r"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -51,8 +64,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Pokedex View Controller-->
+        <scene sceneID="eM1-tP-Tfg">
+            <objects>
+                <viewController id="vHd-2X-d2M" customClass="PokedexViewController" customModule="PokemonClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bIJ-Wd-SQf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cGT-9o-KAo">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x3p-7k-eV5">
+                                <rect key="frame" x="162.5" y="597" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="3kJ-l4-WE8"/>
+                                    <constraint firstAttribute="width" constant="50" id="naO-ew-106"/>
+                                </constraints>
+                                <state key="normal" image="map"/>
+                                <connections>
+                                    <action selector="mapTapped:" destination="vHd-2X-d2M" eventType="touchUpInside" id="H0D-7o-qE5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iMP-Ia-Hkn" firstAttribute="bottom" secondItem="x3p-7k-eV5" secondAttribute="bottom" constant="20" id="5b2-C5-6EJ"/>
+                            <constraint firstItem="x3p-7k-eV5" firstAttribute="centerX" secondItem="bIJ-Wd-SQf" secondAttribute="centerX" id="8LN-UR-a5t"/>
+                            <constraint firstItem="cGT-9o-KAo" firstAttribute="top" secondItem="iMP-Ia-Hkn" secondAttribute="top" id="J3j-eW-3fm"/>
+                            <constraint firstItem="iMP-Ia-Hkn" firstAttribute="bottom" secondItem="cGT-9o-KAo" secondAttribute="bottom" id="SXa-Nr-YFs"/>
+                            <constraint firstItem="iMP-Ia-Hkn" firstAttribute="bottom" secondItem="x3p-7k-eV5" secondAttribute="bottom" constant="20" id="c2g-nZ-JR7"/>
+                            <constraint firstItem="iMP-Ia-Hkn" firstAttribute="trailing" secondItem="cGT-9o-KAo" secondAttribute="trailing" id="hcs-xl-gUD"/>
+                            <constraint firstItem="cGT-9o-KAo" firstAttribute="leading" secondItem="iMP-Ia-Hkn" secondAttribute="leading" id="nUO-5Y-p48"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iMP-Ia-Hkn"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="cGT-9o-KAo" id="ohc-gz-mIU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m4e-D0-wao" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="889" y="57"/>
+        </scene>
     </scenes>
     <resources>
         <image name="compass" width="512" height="512"/>
+        <image name="map" width="512" height="512"/>
+        <image name="pokeball" width="512" height="512"/>
     </resources>
 </document>
