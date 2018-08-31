@@ -16,12 +16,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var manager = CLLocationManager()
     var updateCount = 0
     var zoomer = 350
+    var pokemons : [Pokemon] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        pokemons = getAllPokemon()
         
-        addAllPokemon()
         
         manager.delegate = self
         
